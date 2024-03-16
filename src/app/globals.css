@@ -2,32 +2,144 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+body,
+html {
+  width: 100%;
+  height: 100%;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.button {
+  background: linear-gradient(90deg, #7184fd, #3f7af0, #4f37ee);
+}
+
+.bar {
+  height: 1.5px;
+  width: 20px;
+  background-color: #ffff;
+}
+
+.heroImg {
+  background: linear-gradient(to bottom right, #000000 5%, #046202 95%);
+  border-radius: 5px;
+  height: 60vh;
+}
+
+.heroImg::after {
+  content: "Carpe Diem Pension, a blockchain-based retirement fund, offers permanent payouts through CDP deposits, with a 4.32% annual inflation claimable by depositors.";
+  position: absolute;
+  bottom: 1rem;
+  left: 3rem;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  width: 60%;
+}
+
+.hero-inset {
+  height: 20vh;
+  width: 28vw;
+}
+
+.hero-border {
+  background-color: #fff;
+  height: 10vh;
+  width: 12vw;
+  right: -90px;
+  top: 2rem;
+}
+
+.hero-text:before {
+  content: "";
+  position: absolute;
+  height: 2.3px;
+  width: 80px;
+  top: 1.5rem;
+  background-color: #2d83ee;
+}
+
+.heroImage2 {
+  height: 8vh;
+  width: 9vw;
+}
+
+.dialog {
+  box-shadow: #7184fd 0px 1px 2px 0px, #2d83ee 0px 0px 3px 1px;
+}
+
+.review-box {
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+}
+
+.news-bg {
+  background: linear-gradient(to right, #edf2fe 100%, #d9d9d9 0%);
+}
+
+.footer-text::before {
+  content: "";
+  position: absolute;
+  width: 160px;
+  top: 2rem;
+  height: 2.3px;
+  border-radius: 19px;
+  background-color: #2d83ee;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+h1,
+h2,
+h3,
+h4,
+li,
+p,
+img,
+button {
+  animation: fade linear both;
+  animation-timeline: view();
+  animation-range: entry 70% cover 30%;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+li,
+img {
+  cursor: pointer;
+}
+
+.navdiv {
+  transition: all 0.3s ease-in-out;
+}
+
+@media only screen and (max-width: 1200px) {
+  .hero-inset {
+    height: 20vh;
+    width: 80vw;
+  }
+  .heroImg::after {
+    display: none;
+  }
+  .hero-border {
+    height: 8vh;
+    width: 30vw;
+    right: 50px;
+    top: 32rem;
+  }
+  .heroImage2 {
+    height: 5vh;
+    width: 22vw;
   }
 }
